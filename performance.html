@@ -1,9 +1,50 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="日本株朝報">
-<meta name="theme-color" content="#0f172a"><link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png"><title>成績（答え合わせ）</title>
-<style>body{margin:0;background:#0f172a;color:#e2e8f0;font-family:-apple-system,"Hiragino Sans",sans-serif;line-height:1.7}.w{max-width:900px;margin:auto;padding:16px}a{color:#38bdf8}
-.c{background:#1e293b;border-radius:12px;padding:12px 16px;margin:8px 0;display:block;text-decoration:none}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #334155;padding:5px}.tw{overflow-x:auto}.p{color:#22c55e}.m{color:#ef4444}</style></head>
-<body><div style="position:sticky;top:0;z-index:99;background:#020617;color:#e2e8f0;font:13px -apple-system,sans-serif;padding:calc(env(safe-area-inset-top) + 6px) 12px 6px;display:flex;gap:12px;flex-wrap:wrap;border-bottom:1px solid #334155">
-<b>最終更新（日本時間）: 2026-10-14 18:44</b><a style="color:#38bdf8" href="index.html">最新</a><a style="color:#38bdf8" href="archive.html">アーカイブ</a><a style="color:#38bdf8" href="performance.html">成績</a></div><div class="w"><h1 style="font-size:22px">成績（答え合わせ）</h1><p>track_record.csv はまだありません（初回の答え合わせ後に表示されます）。</p></div><p style="color:#94a3b8;font-size:12px;padding:12px">※本サイトは情報提供のみを目的としており、投資助言ではありません。売買の判断はご自身の責任で行ってください。注文機能はありません。</p><script>if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");</script></body></html>
+<meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+<meta name="build" content="20261014203332"><link rel="manifest" href="manifest.webmanifest?v=20261014203332"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png"><title>成績</title><style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#0f172a;--sub:#5b6474;--line:#e3e7ef;--acc:#2563eb;--grn:#059669;--red:#dc2626;--yel:#d97706;--chip:#eef2f7;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#131c2e;--ink:#e6ebf5;--sub:#93a0b8;--line:#24304a;--acc:#60a5fa;--grn:#34d399;--red:#f87171;--yel:#fbbf24;--chip:#1c2740}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:16px;line-height:1.65;letter-spacing:.01em;font-feature-settings:"palt";padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+.num,td,.tile .v{font-variant-numeric:tabular-nums}
+a{color:var(--acc)}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:calc(env(safe-area-inset-top) + 8px) 16px 8px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+header.top h1{font-size:17px;margin:0}header.top small{color:var(--sub);font-size:12px}
+main{max-width:760px;margin:auto;padding:12px max(12px,env(safe-area-inset-left)) 12px max(12px,env(safe-area-inset-right))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+h2{font-size:17px;margin:20px 4px 6px}h2 small{color:var(--sub);font-weight:400;font-size:12px}
+.hero{padding:20px 18px;border-width:2px}
+.hero.t{border-color:var(--grn)}.hero.n{border-color:var(--sub)}
+.vd{font-size:44px;font-weight:800;line-height:1.1;letter-spacing:-.01em}.hero.t .vd{color:var(--grn)}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 10px}
+.kp div{background:var(--chip);border-radius:12px;padding:8px 10px}.kp b{display:block;font-size:22px}.kp span{font-size:11px;color:var(--sub)}
+.rg{font-size:15px}.meta{color:var(--sub);font-size:12.5px}
+.alert{background:color-mix(in srgb,var(--yel) 16%,var(--card));border:1px solid color-mix(in srgb,var(--yel) 50%,transparent);border-radius:12px;padding:10px 12px;font-size:14px;margin-top:10px}
+.na{color:var(--red);font-weight:600}.guess{color:var(--yel);font-size:.85em}.fact{color:var(--grn);font-size:.85em}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:24px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:700;background:var(--chip)}
+.b-T{background:var(--grn);color:#fff}.b-N{background:var(--sub);color:var(--bg)}.r-S{background:#7c3aed;color:#fff}.r-A{background:var(--grn);color:#fff}.r-B{background:var(--acc);color:#fff}.r-C{background:var(--chip)}
+.cand .hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.cand .nm{font-size:19px;font-weight:700}.cand .sb{color:var(--sub);font-size:13px}
+.cand .px{font-size:15px;margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.grid div{background:var(--chip);border-radius:10px;padding:6px 8px;font-size:12px;color:var(--sub)}.grid b{display:block;color:var(--ink);font-size:15px}
+.bar{position:relative;height:16px;margin:30px 6px 34px;background:var(--chip);border-radius:8px}
+.bar b{position:absolute;top:0;height:16px}.zl{background:color-mix(in srgb,var(--red) 35%,transparent)}.ze{background:var(--acc);border-radius:3px}.zp{background:color-mix(in srgb,var(--grn) 35%,transparent)}
+.bar .mk{position:absolute;top:-4px;width:2px;height:24px;background:var(--ink);transform:translateX(-1px)}.bar .ml{position:absolute;top:22px;transform:translateX(-50%);font-size:10.5px;line-height:1.2;text-align:center;white-space:nowrap;color:var(--sub)}
+.ml.l{color:var(--red)}.ml.p{color:var(--grn)}.ml.e{color:var(--acc);top:-30px}.mk.e{background:var(--acc)}
+.nobar{font-size:12.5px;color:var(--sub);background:var(--chip);border-radius:10px;padding:8px;margin:10px 0}
+.size{font-size:13.5px;margin-top:8px}.skip{color:var(--red);font-weight:700}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:640px}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{background:var(--chip);position:sticky;top:0}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;min-height:96px}.tile .k{font-size:12px;color:var(--sub)}.tile .v{font-size:15px;font-weight:700;word-break:break-word}.tile .s{font-size:11px;color:var(--sub);margin-top:4px}.tile .s a{display:inline-block;min-height:24px}
+details.card summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700}
+.btn{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:14px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;margin:12px 0}
+nav.tab{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);background:color-mix(in srgb,var(--card) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav.tab a{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--sub);font-size:11px;gap:2px}nav.tab a svg{width:24px;height:24px}nav.tab a.on{color:var(--acc);font-weight:700}
+.arc{display:flex;align-items:center;gap:10px;min-height:56px;text-decoration:none;color:var(--ink)}.arc .d{font-weight:700;font-variant-numeric:tabular-nums}.arc .x{flex:1;font-size:12.5px;color:var(--sub);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+input[type=search]{width:100%;min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px;padding:0 14px}
+.empty{text-align:center;color:var(--sub);padding:28px 12px}.empty b{display:block;font-size:17px;color:var(--ink);margin-bottom:6px}
+.disc{color:var(--sub);font-size:12px;padding:8px 16px 16px;max-width:760px;margin:auto}
+.p{color:var(--grn)}.m{color:var(--red)}
+</style></head><body><header class="top"><h1>日本株朝報</h1><small>更新 2026-10-14 20:33 JST</small></header><main><h2>成績（答え合わせ）</h2><div class="card empty"><b>まだ答え合わせのデータがありません</b>前営業日の候補を確認した日から、損益推移・勝率・ランク別成績がここに表示されます。<br>（track_record.csv 未作成）</div></main><p class="disc">※本サイトは情報提供のみを目的としており、投資助言ではありません。株価の予想・目安は推測であり、将来の値動きを保証しません。売買の判断はご自身の責任で行ってください。注文機能はありません。</p><nav class="tab"><a href="index.html" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>最新</a><a href="index.html#market" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>相場</a><a href="performance.html" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>成績</a><a href="archive.html" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4zM5 8v12h14V8M10 12h4"/></svg>履歴</a></nav><script>if("serviceWorker"in navigator){navigator.serviceWorker.register("sw.js?v=20261014203332").then(r=>r.update());let x;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(!x){x=1;location.reload()}})}</script></body></html>
