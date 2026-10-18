@@ -1,5 +1,5 @@
-// build 20261017115229
-const C="jp-20261017115229";const CORE=["./", "./index.html", "./archive.html", "./performance.html", "./flow.html", "./manifest.webmanifest", "./apple-touch-icon.png", "./reports/2026-10-16.html", "./reports/2026-10-15.html"];
+// build 20261019080626
+const C="jp-20261019080626";const CORE=["./", "./index.html", "./archive.html", "./performance.html", "./flow.html", "./manifest.webmanifest", "./apple-touch-icon.png", "./reports/2026-10-19.html", "./reports/2026-10-16.html", "./reports/2026-10-15.html"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>Promise.all(CORE.map(u=>c.add(new Request(u,{cache:"reload"})).catch(()=>0)))))});
 self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",e=>{const q=e.request;if(q.method!=="GET"||new URL(q.url).origin!==location.origin)return;
