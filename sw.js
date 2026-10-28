@@ -1,5 +1,5 @@
-// build 20261028080315
-const C="jp-20261028080315";const CORE=["./", "./index.html", "./archive.html", "./performance.html", "./flow.html", "./manifest.webmanifest", "./apple-touch-icon.png", "./reports/2026-10-28.html", "./reports/2026-10-27.html", "./reports/2026-10-26.html", "./reports/2026-10-23.html", "./reports/2026-10-22.html"];
+// build 20261029080621
+const C="jp-20261029080621";const CORE=["./", "./index.html", "./archive.html", "./performance.html", "./flow.html", "./manifest.webmanifest", "./apple-touch-icon.png", "./reports/2026-10-29.html", "./reports/2026-10-28.html", "./reports/2026-10-27.html", "./reports/2026-10-26.html", "./reports/2026-10-23.html"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>Promise.all(CORE.map(u=>c.add(new Request(u,{cache:"reload"})).catch(()=>0)))))});
 self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",e=>{const q=e.request;if(q.method!=="GET"||new URL(q.url).origin!==location.origin)return;
